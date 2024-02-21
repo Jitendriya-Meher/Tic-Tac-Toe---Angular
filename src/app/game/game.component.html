@@ -1,0 +1,30 @@
+<div class="outer-cont">
+
+    <h2 *ngIf="freshpage">
+        Let's Play Tic-Tac-Toe
+    </h2>
+    <h1 *ngIf="!winner && !isDraw && !freshpage">
+        Current Player : {{player}}
+    </h1>
+    <h2 *ngIf="winner">
+        Player {{winner}} won!
+    </h2>
+    <h2 *ngIf="isDraw">
+        Draw!
+    </h2>
+    <button (click)="newGame()" *ngIf="freshpage">
+        Start Game
+    </button>
+
+    <main *ngIf="!freshpage">
+        <app-board [value]="squares[0]" (click)="makeMove(0)"></app-board>
+        <app-board [value]="squares[1]" (click)="makeMove(1)"></app-board>
+        <app-board [value]="squares[2]" (click)="makeMove(2)"></app-board>
+        <app-board [value]="squares[3]" (click)="makeMove(3)"></app-board>
+        <app-board [value]="squares[4]" (click)="makeMove(4)"></app-board>
+        <app-board [value]="squares[5]" (click)="makeMove(5)"></app-board>
+        <app-board [value]="squares[6]" (click)="makeMove(6)"></app-board>
+        <app-board [value]="squares[7]" (click)="makeMove(7)"></app-board>
+        <app-board [value]="squares[8]" (click)="makeMove(8)"></app-board>
+    </main>
+</div>
